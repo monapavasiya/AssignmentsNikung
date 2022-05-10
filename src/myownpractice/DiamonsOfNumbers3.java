@@ -1,21 +1,18 @@
 package myownpractice;
 
-public class DiamondOfStars 
-{ 
-	/*
-	       
-    * 
-   * * 
-  * * * 
- * * * * 
-  * * * 
-   * * 
-    * 
-	  
-	  
+public class DiamonsOfNumbers3 
+{/*
+    1 
+   2 2 
+  3 3 3 
+ 4 4 4 4 
+  3 3 3 
+   2 2 
+    1 
+
 */
 
-	public static void main(String[] args)
+	public static void main(String[] args) 
 	{
 		for(int i=1; i<4; i++) 
 		{ 
@@ -25,12 +22,12 @@ public class DiamondOfStars
 			}
 			for(int j=1; j<=i; j++)
 			{
-				System.out.print("* ");
+				System.out.print(j+" ");
 			}	
 
 			System.out.println();
 		}
-		for(int i=1; i<=4; i++) 
+		for(int i=1; i<=4; i++)
 		{ 
 			for (int j=1; j<=i; j++)
 			{
@@ -38,11 +35,12 @@ public class DiamondOfStars
 			}
 			for(int j=i; j<=4; j++)
 			{
-				System.out.print("* ");
+				System.out.print(j+" ");
 			}	
 
 			System.out.println();
 			
 		}
 	}
+
 }

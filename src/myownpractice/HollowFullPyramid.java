@@ -14,16 +14,16 @@ public class HollowFullPyramid
 
 	public static void main(String[] args)
 	{
-		int n = 6;
-		for (int i = 0; i < n; i++) 
+		
+		for (int i = 0; i < 6; i++) 
 		{
-			for (int j = n - i; j > 1; j--) 
+			for (int j = 6 - i; j > 1; j--) 
 			{
 				System.out.print(" ");
 			}
 			for (int j = 0; j <= i; j++)
 			{
-				if (j == 0 || j == i || i == n - 1) 
+				if (j == 0 || j == i || i == 6 - 1) 
 				{
 					System.out.print("* ");
 				}
