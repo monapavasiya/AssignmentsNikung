@@ -31,14 +31,11 @@ public class OverloadingOfMainMethod {
 	}
 
 	public static void main(String[] args) {
-		OverloadingOfMainMethod m1 = new OverloadingOfMainMethod();// call first method
-		OverloadingOfMainMethod m2 = new OverloadingOfMainMethod();// call second method
-		OverloadingOfMainMethod m3 = new OverloadingOfMainMethod();// call third method
-		OverloadingOfMainMethod m4 = new OverloadingOfMainMethod();// call fourth method
-		m1.main();
-		m2.main(30, 40);
-		m3.main(10,20,30);
-		m4.main(10, 20.5);
+		
+		main();
+		main(30, 40);
+		main(10,20,30);
+		main(10, 20.5);
 		
 
 	}
