@@ -23,7 +23,7 @@ public class HollowFullPyramid
 			}
 			for (int j = 0; j <= i; j++)
 			{
-				if (j == 0 || j == i || i == 6 - 1) 
+				if (j == 0 || j == i || i == 5) 
 				{
 					System.out.print("* ");
 				}
