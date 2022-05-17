@@ -31,11 +31,11 @@ public class OverloadingOfMainMethod {
 	}
 
 	public static void main(String[] args) {
-		
-		main();
-		main(30, 40);
-		main(10,20,30);
-		main(10, 20.5);
+		OverloadingOfMainMethod m1 =new OverloadingOfMainMethod();
+		m1.main();
+		m1.main(30, 40);
+		m1.main(10,20,30);
+		m1.main(10, 20.5);
 		
 
 	}
