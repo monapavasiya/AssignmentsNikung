@@ -1,6 +1,7 @@
 package myownpractice;
 
-public class Student {
+public class Student 
+{
 
 	String name;
 	int mathScore;
@@ -8,7 +9,8 @@ public class Student {
 	int sciScore;
 	int totalScore;
 
-	public Student(String name, int mathScore, int engScore, int sciScore) {
+	public Student(String name, int mathScore, int engScore, int sciScore) 
+	{
 		super();
 		this.name = name;
 		this.mathScore = mathScore;
@@ -18,11 +20,16 @@ public class Student {
 
 	}
 
+	public int gettotalScore()
+	{
+		return totalScore;
+	}
+
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "Student [name=" + name + ", mathScore=" + mathScore + ", engScore=" + engScore + ", sciScore="
 				+ sciScore + ", totalScore=" + totalScore + "]";
 	}
-
 	
 }

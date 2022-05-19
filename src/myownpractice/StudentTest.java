@@ -1,10 +1,12 @@
 package myownpractice;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class StudentTest 
 {
 
+	
 	public static void main(String[] args) 
 	{
 		Student s1 = new Student("Mona", 94, 82, 75);
@@ -19,7 +21,11 @@ public class StudentTest
 		
 		Student[] listOfStudent = {s1, s2, s3, s4, s5};
 		
-		// Print maximum English mark  with name
+		
+  // Print maximum English mark  with name
+		System.out.println("English Maximum Score");
+		System.out.println("-------");
+		
 		int engMaxScore = 0;
 		Student engMaxScoreStudent = null;;
 		
@@ -27,21 +33,21 @@ public class StudentTest
 		{
 			if(engMaxScore < s.engScore)
 			{
-				engMaxScore = s.engScore;
 				engMaxScoreStudent = s;
 			}
 		}
-		System.out.println("English Maximum Score");
-		System.out.println("-------");
 		System.out.println("Student Name: " + engMaxScoreStudent.name);
 		System.out.println("Score: " + engMaxScoreStudent.engScore);
+		System.out.println("###############");
 		System.out.println();
 		
 		
-		//----Total of marks----
+ //----Total scores of each students----
+		
+		  System.out.println("Total Scores of each Students");
+		  System.out.println("-------");
 		int sum = 0;
 		int[] totalSum = new int[listOfStudent.length];
-		String[] n = new String[listOfStudent.length];
 		int i = 0;
 		for (Student s : listOfStudent) {
 
@@ -49,19 +55,22 @@ public class StudentTest
 			int math = s.mathScore;
 			int eng = s.engScore;
 			int sci = s.sciScore;
-
+			
 			sum = math + eng + sci;
-
+			
 			System.out.println("Total score of " + name + " = " + sum);
-
 			totalSum[i] = sum;
-			n[i] = s.name;
 			i++;
-
-		}
+		}	
+		
+		System.out.println("###############");
 		System.out.println();
 		
-		// ------Top student-----
+		
+ // ------Top student-----
+		
+		System.out.println("Top Student");
+		System.out.println("-------");
 		int MaxScore = 0;
 		Student MaxScoreStudent = null;
 		
@@ -73,15 +82,16 @@ public class StudentTest
 				MaxScoreStudent = s;
 			}
 		}
-		System.out.println("Maximum Score");
-		System.out.println("-------");
 		System.out.println("Student Name: " + MaxScoreStudent.name);
 		System.out.println("Score: " + MaxScoreStudent.totalScore);
+		System.out.println("###############");
 		System.out.println();
 		
 		
 		
-		//---- bottom student--
+ //---- Bottom student--
+		System.out.println("Bottom Student");
+		System.out.println("-------");
 		int MinScore = MaxScore;
 		Student MinScoreStudent = null;
 		
@@ -93,45 +103,32 @@ public class StudentTest
 				MinScoreStudent = s;
 			}
 		}
-		System.out.println("Minimum Score");
-		System.out.println("-------");
 		System.out.println("Student Name: " + MinScoreStudent.name);
 		System.out.println("Score: " + MinScoreStudent.totalScore);
+		System.out.println("###############");
 		System.out.println();
 		
+ // -----student's ranks----
 		
-		Arrays.sort(totalSum);
-		for(int k=totalSum.length-1; k>=0; k--) {
-			System.out.println("********");
-			System.out.println(totalSum[k]);
-			
-		}
+		System.out.println("Student's Ranks");
+		System.out.println("-------");
+		Arrays.sort(listOfStudent,Comparator.comparing(Student::gettotalScore));
+		int j =1;
 		
-		for(i=totalSum.length-1; i>0; i--) {
-			
-			int currentMax = totalSum[0];
-
-			int currentMaxIndex = 0;
-			
-			for (int k = 1; k <=i; k++) {
-				if (currentMax < totalSum[k]) {
-
-					currentMax = totalSum[k];
-
-					currentMaxIndex = k;
-			}
+		for(int m=listOfStudent.length-1; m>=0; m--)
+		{
+			Student student = listOfStudent[m];
+			System.out.print("("+"Rank " + j +")"+ student.name);
+			System.out.println(" With " + "Score: " + student.totalScore);
+			System.out.println();
+			j++;
 		}
-			totalSum[currentMaxIndex] = totalSum[i];
-
-			totalSum[i] = currentMax;
-
-			String tempName = n[currentMaxIndex];
-
-			n[currentMaxIndex] = n[i];
-
-			n[i] = tempName;
-			System.out.println("**"+tempName);
-	}
+	
+	
+	
+	
+	
+	
 	
 	}
 }
