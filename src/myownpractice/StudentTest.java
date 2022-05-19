@@ -123,12 +123,5 @@ public class StudentTest
 			System.out.println();
 			j++;
 		}
-	
-	
-	
-	
-	
-	
-	
 	}
 }
