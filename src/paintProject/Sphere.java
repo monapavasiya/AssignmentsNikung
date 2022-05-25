@@ -2,11 +2,13 @@ package paintProject;
 
 class Sphere extends Shape 
 {
-	int radius;
+   private  int radius;
 	double PI = 3.14;
 	
 	public Sphere(int radius) 
 	{
+		
+		this.shapeName = Sphere.class.getSimpleName();
 		this.radius = radius;
 	}
 

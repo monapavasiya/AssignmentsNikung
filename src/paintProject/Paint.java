@@ -1,24 +1,23 @@
 package paintProject;
 
-public class Paint 
-{
-	double coverage;
+import java.text.DecimalFormat;
 
-	public Paint(double coverage) 
-	{
-		
-		this.coverage = coverage;
-	}
+public class Paint {
+	public static final double coverage = 350;
 
-	public double amount(Shape s) 
-	{
+	public void amount(Shape s) {
 		System.out.println("Computing amount for " + s);
-		return s.area() / coverage;
+		double amount = s.area() / coverage;
+
+		DecimalFormat fmt = new DecimalFormat("0.##");
+
+		System.out.println(s.getShapeName() + " = " + fmt.format(amount));
+		System.out.println();
+
 	}
 
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return "Paint [coverage=" + coverage + "]";
 	}
 

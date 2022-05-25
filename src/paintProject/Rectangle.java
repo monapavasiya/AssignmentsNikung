@@ -2,11 +2,13 @@ package paintProject;
 
 class Rectangle  extends  Shape
 {
-      int length;
-      int width;
+      private int length;
+      private int width;
       
 	public Rectangle(int length, int width) 
 	{
+		
+		this.shapeName = Rectangle.class.getSimpleName();
 		this.length = length;
 		this.width = width;
 	}
@@ -16,9 +18,11 @@ class Rectangle  extends  Shape
 	  {
 		return length*width;
 	  }
-	
+
 	@Override
 	public String toString() {
 		return "Rectangle [length=" + length + ", width=" + width + "]";
 	}
+	
+	
 }
